@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            double dis, a, b, c, sol1, sol2, partR, partI;
+            Console.WriteLine("Entrez le nombre a");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("entrez le nombre b");
+            b = double.Parse(Console.ReadLine());
+            Console.WriteLine("entrez le nombre c");
+            c = double.Parse(Console.ReadLine());
+            
+            //Console.WriteLine("Le nombre a est" + "=" + a);
+            //Console.WriteLine("Le nombre b est" + "=" + b);
+            //Console.WriteLine("Le nombre c est" + "=" + c);
+            
+
+            dis = (b * b) - (4 * a * c);
+
+
+            if (dis > 0)
+            {
+                Console.WriteLine("deux solutions");
+                sol1 = (-b - Math.Sqrt(dis)) / 2 * a;
+                sol2 = (-b + Math.Sqrt(dis)) / 2 * a;
+                Console.WriteLine("Solution1:" + sol1);
+                Console.WriteLine("solution2:" + sol2);
+                Console.ReadKey(true);
+            }
+            if (dis == 0)
+            {
+                Console.WriteLine("Une soluton");
+                sol1 = (-b) / (2 * a);
+                Console.WriteLine(sol1);
+                Console.ReadKey(true);
+            }
+
+            else
+            {
+                Console.WriteLine("pas de solution dans R");
+                Console.WriteLine("So solution dans C est");
+                Console.ReadKey(true);
+                dis = Math.Abs(dis);
+                partR = (-b / 2 * a);
+                partI = Math.Sqrt(dis) / 2 * a;
+
+                Console.WriteLine(partR + "-i" + partI);
+                Console.WriteLine(partR + "+i" + partI);
+                Console.ReadKey(true);
+
+
+
+
+
+            }
+        }
+    }
+}
